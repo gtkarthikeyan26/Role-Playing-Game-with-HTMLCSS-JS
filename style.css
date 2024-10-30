@@ -1,0 +1,163 @@
+body {
+    background-color: #0a0a23;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  #game {
+    max-width: 800px; 
+    max-height: 600px; 
+    background: linear-gradient(145deg, #1a1a3a, #0a0a23);
+    color: #ffffff;
+    margin: 30px auto 0px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  #game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  #controls,
+  #stats {
+    border: 2px solid #feac32;
+    padding: 15px;
+    margin: 10px 0;
+    color: #ffffff;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+  }
+  
+  #controls:hover,
+  #stats:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+  }
+  
+  .stat {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .stat:hover {
+    background: rgba(254, 172, 50, 0.2);
+    transform: translateY(-2px);
+  }
+  
+  #monsterStats {
+    display: none;
+    border: 2px solid #c70d0d;
+    padding: 15px;
+    color: #ffffff;
+    background: linear-gradient(145deg, #e51c1c, #c70d0d);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(199, 13, 13, 0.3);
+    animation: monsterAppear 0.5s ease;
+  }
+  
+  button {
+    cursor: pointer;
+    color: #0a0a23;
+    background: linear-gradient(145deg, #fecc4c, #ffac33);
+    border: 3px solid #feac32;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button:hover {
+    background: linear-gradient(145deg, #ffac33, #fecc4c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 172, 50, 0.4);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  button:hover::after {
+    animation: ripple 1s ease-out;
+  }
+  
+  #text {
+    background-color: rgba(10, 10, 35, 0.8);
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animations */
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(40, 40);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes monsterAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Glowing effect for important numbers */
+  #xpText,
+  #healthText,
+  #goldText,
+  #monsterHealth {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  #xpText:hover,
+  #healthText:hover,
+  #goldText:hover,
+  #monsterHealth:hover {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  }
